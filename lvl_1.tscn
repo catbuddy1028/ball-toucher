@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://3ehx0ss6oo7l"]
+
+[ext_resource type="PackedScene" uid="uid://c2we6nixv2mqy" path="res://ball.tscn" id="1_6mpcb"]
+[ext_resource type="PackedScene" uid="uid://ybqtrxfxd71u" path="res://wall.tscn" id="2_8t7b0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8t7b0"]
+bounce = 0.41
+
+[node name="lvl1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BALL" parent="." instance=ExtResource("1_6mpcb")]
+position = Vector2(-8, -100)
+physics_material_override = SubResource("PhysicsMaterial_8t7b0")
+gravity_scale = 2.067
+continuous_cd = 1
+
+[node name="wall" parent="." instance=ExtResource("2_8t7b0")]
+position = Vector2(2, -321)
+
+[node name="wall2" parent="." instance=ExtResource("2_8t7b0")]
+position = Vector2(-3, 317)
+
+[node name="wall3" parent="." instance=ExtResource("2_8t7b0")]
+position = Vector2(-568, 76)
+rotation = 1.5708
+
+[node name="wall4" parent="." instance=ExtResource("2_8t7b0")]
+position = Vector2(571, 40)
+rotation = 1.5708
+
+[connection signal="body_entered" from="BALL" to="BALL" method="_on_body_entered"]

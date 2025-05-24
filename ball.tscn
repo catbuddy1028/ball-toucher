@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2we6nixv2mqy"]
+
+[ext_resource type="Script" uid="uid://bmd1gavs75rmj" path="res://rigid_body_2d.gd" id="1_41u45"]
+[ext_resource type="Texture2D" uid="uid://c8xo182daw44w" path="res://used_assets/rollingBall_sheet@2.png" id="2_ktgx5"]
+[ext_resource type="AudioStream" uid="uid://d3jby6qdey0dw" path="res://used_assets/click-a.ogg" id="3_ktgx5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgol0"]
+friction = 0.1
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hgol0"]
+radius = 32.573
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5601"]
+atlas = ExtResource("2_ktgx5")
+region = Rect2(256, 288, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gchj4"]
+atlas = ExtResource("2_ktgx5")
+region = Rect2(256, 160, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01kih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5601")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gchj4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="BALL" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_hgol0")
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_41u45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hgol0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(0.507813, 0.507813)
+sprite_frames = SubResource("SpriteFrames_01kih")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ktgx5")
+volume_db = 8.914
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
