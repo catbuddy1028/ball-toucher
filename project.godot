@@ -13,12 +13,19 @@ config_version=5
 config/name="ball toucher"
 run/main_scene="uid://3ehx0ss6oo7l"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/we will see if i will use them/icon.svg"
 
 [autoload]
 
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
-Global="*res://global.gd"
+Global="*res://objects/global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1028
+window/size/mode=3
+mouse_cursor/custom_image="uid://bh0hpxolsd5x"
 
 [editor_plugins]
 
@@ -28,3 +35,4 @@ enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
