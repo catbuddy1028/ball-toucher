@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://f6xs35vnr4yi"]
+
+[ext_resource type="Texture2D" uid="uid://c8lh5eylydqjb" path="res://objects/used_assets/yellow.png" id="2_argb0"]
+[ext_resource type="FontFile" uid="uid://vb2phlq3ensk" path="res://objects/used_assets/Kenney Future Narrow.ttf" id="2_gq022"]
+
+[node name="textbox" type="MarginContainer"]
+offset_right = 172.0
+offset_bottom = 46.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_argb0")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_gq022")
+bbcode_enabled = true
+text = "hold [img=center,center,30]res://objects/used_assets/mouse_left.png[/img] to drag"
+fit_content = true
+vertical_alignment = 1

@@ -17,7 +17,6 @@ config/icon="res://assets/we will see if i will use them/icon.svg"
 
 [autoload]
 
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Global="*res://objects/global.gd"
 
 [display]

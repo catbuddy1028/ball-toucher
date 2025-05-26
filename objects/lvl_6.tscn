@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://bvi8ocx6os4tj"]
 
-[ext_resource type="Texture2D" uid="uid://biefyq2abc4b8" path="res://used_assets/scribbleDungeons_tiles.svg" id="1_3jq74"]
-[ext_resource type="Texture2D" uid="uid://defbu6v5lbi3b" path="res://used_assets/scribblePlatformer_vector.svg" id="2_npkly"]
+[ext_resource type="Texture2D" uid="uid://biefyq2abc4b8" path="res://objects/used_assets/scribbleDungeons_tiles.svg" id="1_3jq74"]
+[ext_resource type="Texture2D" uid="uid://defbu6v5lbi3b" path="res://objects/used_assets/scribblePlatformer_vector.svg" id="2_npkly"]
 [ext_resource type="PackedScene" uid="uid://c2we6nixv2mqy" path="res://objects/ball.tscn" id="3_7l72u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rf75"]

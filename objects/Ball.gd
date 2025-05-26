@@ -1,5 +1,9 @@
 extends RigidBody2D
 
+const  lines: Array[String] = [
+	"drž [img=center,center]objects/used_assets/mouse_left.png[/img] pro chycení koule"
+]
+
 # Dragging behavior
 var dragging := false
 var drag_offset := Vector2.ZERO
