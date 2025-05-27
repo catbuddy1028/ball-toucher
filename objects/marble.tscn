@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://cqlpy8emyre81"]
+
+[ext_resource type="Script" uid="uid://b7p5jmsbpsnih" path="res://marble.gd" id="1_c065s"]
+[ext_resource type="Texture2D" uid="uid://dt5otlbi75s5" path="res://assets/we will see if i will use them/Base pack/Vector/aliens.svg" id="2_7jdef"]
+[ext_resource type="AudioStream" uid="uid://d2ykh4gbvl6p0" path="res://objects/used_assets/boing_1.ogg" id="3_pjcny"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgol0"]
+friction = 0.1
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hgol0"]
+radius = 19.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgol0"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(956, 330, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5601"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(1016, 330, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gchj4"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(956, 230, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01kih"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(1016, 230, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iob0"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(956, 130, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jqm0"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(1016, 130, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nidkk"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(956, 30, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb544"]
+atlas = ExtResource("2_7jdef")
+region = Rect2(1016, 30, 47, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01kih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgol0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5601")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gchj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01kih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iob0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jqm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nidkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb544")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="marble" type="RigidBody2D" groups=["quiz_object"]]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_hgol0")
+can_sleep = false
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_c065s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hgol0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(0.869506, 0.869506)
+sprite_frames = SubResource("SpriteFrames_01kih")
+frame = 1
+frame_progress = 0.566164
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pjcny")
+volume_db = 8.914
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://3ehx0ss6oo7l"]
+[gd_scene load_steps=26 format=4 uid="uid://3ehx0ss6oo7l"]
 
 [ext_resource type="Texture2D" uid="uid://biefyq2abc4b8" path="res://objects/used_assets/scribbleDungeons_tiles.svg" id="1_3rf75"]
 [ext_resource type="PackedScene" uid="uid://c2we6nixv2mqy" path="res://objects/ball.tscn" id="1_6mpcb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b5vkmydb1hp33" path="res://objects/area_2d.gd" id="3_4cgt6"]
 [ext_resource type="PackedScene" uid="uid://dux40ys5lwes8" path="res://objects/gate.tscn" id="4_jeswm"]
 [ext_resource type="Texture2D" uid="uid://bgtwbmt2osch1" path="res://objects/used_assets/red_dot.png" id="4_r1w3s"]
+[ext_resource type="Script" uid="uid://clohgwv4joxfo" path="res://objects/indicator.gd" id="5_0chrq"]
 [ext_resource type="Texture2D" uid="uid://bjfi6o7iwnrd8" path="res://objects/used_assets/yellow_dot.png" id="5_1r6qf"]
 [ext_resource type="Texture2D" uid="uid://cohosmqkotclt" path="res://objects/used_assets/green_dot.png" id="6_5mi0e"]
 [ext_resource type="Texture2D" uid="uid://dm0ye1swtg5rq" path="res://objects/used_assets/teal_dot.png" id="7_0chrq"]
@@ -323,6 +324,8 @@ size = Vector2(127, 129.5)
 [node name="hub" type="Node2D"]
 
 [node name="world" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="backround" type="TileMapLayer" parent="world"]
 position = Vector2(19, -43)
@@ -339,6 +342,7 @@ offset_right = 634.0
 offset_bottom = 713.445
 bbcode_enabled = true
 text = "[wave][rainbow]fuck you if you see this"
+metadata/_edit_use_anchors_ = true
 
 [node name="fuckyou1" type="RichTextLabel" parent="world/decoration"]
 offset_left = -618.975
@@ -347,6 +351,7 @@ offset_right = -429.975
 offset_bottom = 719.325
 bbcode_enabled = true
 text = "[wave][rainbow]fuck you if you see this"
+metadata/_edit_use_anchors_ = true
 
 [node name="num1" type="AnimatedSprite2D" parent="world/decoration"]
 position = Vector2(-733, -71)
@@ -416,40 +421,46 @@ use_kinematic_bodies = true
 [node name="map features" type="Node2D" parent="world"]
 
 [node name="indicator" type="Sprite2D" parent="world/map features"]
-visible = false
 position = Vector2(-191, -73)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("4_r1w3s")
+script = ExtResource("5_0chrq")
+required_stage = 1
 
 [node name="indicator2" type="Sprite2D" parent="world/map features"]
-visible = false
 position = Vector2(-131, -192)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("5_1r6qf")
+script = ExtResource("5_0chrq")
+required_stage = 2
 
 [node name="indicator3" type="Sprite2D" parent="world/map features"]
-visible = false
 position = Vector2(-10, -252)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("6_5mi0e")
+script = ExtResource("5_0chrq")
+required_stage = 3
 
 [node name="indicator4" type="Sprite2D" parent="world/map features"]
-visible = false
 position = Vector2(110, -192)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("7_0chrq")
+script = ExtResource("5_0chrq")
+required_stage = 4
 
 [node name="indicator5" type="Sprite2D" parent="world/map features"]
-visible = false
 position = Vector2(171, -74)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("8_2pi7f")
+script = ExtResource("5_0chrq")
+required_stage = 5
 
 [node name="indicator6" type="Sprite2D" parent="world/map features"]
-visible = false
 position = Vector2(-11, -133)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("9_0ayo3")
+script = ExtResource("5_0chrq")
+required_stage = 6
 
 [node name="lvl1 teleporter" type="Area2D" parent="world/map features"]
 script = ExtResource("3_4cgt6")
@@ -500,7 +511,7 @@ position = Vector2(701, 550)
 shape = SubResource("RectangleShape2D_jeswm")
 
 [node name="BALL" parent="." instance=ExtResource("1_6mpcb")]
-position = Vector2(-16, -25)
+position = Vector2(-11, -19)
 
 [node name="textbox" type="MarginContainer" parent="BALL"]
 offset_left = -82.0

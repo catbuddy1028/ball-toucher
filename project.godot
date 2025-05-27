@@ -28,11 +28,11 @@ mouse_cursor/custom_image="uid://bh0hpxolsd5x"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 
-player=""
+quiz_object=""
 
 [rendering]
 
