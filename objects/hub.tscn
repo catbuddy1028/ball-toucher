@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://3ehx0ss6oo7l"]
+[gd_scene load_steps=27 format=4 uid="uid://3ehx0ss6oo7l"]
 
 [ext_resource type="Texture2D" uid="uid://biefyq2abc4b8" path="res://objects/used_assets/scribbleDungeons_tiles.svg" id="1_3rf75"]
 [ext_resource type="PackedScene" uid="uid://c2we6nixv2mqy" path="res://objects/ball.tscn" id="1_6mpcb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dm0ye1swtg5rq" path="res://objects/used_assets/teal_dot.png" id="7_0chrq"]
 [ext_resource type="Texture2D" uid="uid://dptyk8t6o13ha" path="res://objects/used_assets/blue_dot.png" id="8_2pi7f"]
 [ext_resource type="Texture2D" uid="uid://df3ofgmjdpl3p" path="res://objects/used_assets/magenta_dot.png" id="9_0ayo3"]
+[ext_resource type="Script" uid="uid://bbc65qfk6cww2" path="res://objects/tutorials.gd" id="12_2pi7f"]
 [ext_resource type="Texture2D" uid="uid://c8lh5eylydqjb" path="res://objects/used_assets/yellow.png" id="12_5mi0e"]
 [ext_resource type="FontFile" uid="uid://vb2phlq3ensk" path="res://objects/used_assets/Kenney Future Narrow.ttf" id="13_0chrq"]
 
@@ -324,6 +325,7 @@ size = Vector2(127, 129.5)
 [node name="hub" type="Node2D"]
 
 [node name="world" type="Node2D" parent="."]
+position = Vector2(-341, -5)
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -387,14 +389,12 @@ sprite_frames = SubResource("SpriteFrames_sxwbh")
 frame = 5
 frame_progress = 0.308874
 
-[node name="gate" parent="world/decoration" instance=ExtResource("4_jeswm")]
+[node name="gate0" parent="world/decoration" instance=ExtResource("4_jeswm")]
+position = Vector2(-690.23, 25)
+
+[node name="gate1" parent="world/decoration" instance=ExtResource("4_jeswm")]
 position = Vector2(-504, 25)
 required_stage = 1
-
-[node name="gate6" parent="world/decoration" instance=ExtResource("4_jeswm")]
-position = Vector2(-56, -306)
-rotation = -3.14159
-required_stage = 6
 
 [node name="gate2" parent="world/decoration" instance=ExtResource("4_jeswm")]
 position = Vector2(-328, 26)
@@ -411,6 +411,11 @@ required_stage = 4
 [node name="gate5" parent="world/decoration" instance=ExtResource("4_jeswm")]
 position = Vector2(751, 26)
 required_stage = 5
+
+[node name="gate6" parent="world/decoration" instance=ExtResource("4_jeswm")]
+position = Vector2(-56, -306)
+rotation = -3.14159
+required_stage = 6
 
 [node name="walls" type="TileMapLayer" parent="world"]
 position = Vector2(19, -43)
@@ -510,16 +515,19 @@ next_scene_path = "res://objects/lvl_6.tscn"
 position = Vector2(701, 550)
 shape = SubResource("RectangleShape2D_jeswm")
 
-[node name="BALL" parent="." instance=ExtResource("1_6mpcb")]
-position = Vector2(-11, -19)
+[node name="tutorials" type="Node2D" parent="."]
+script = ExtResource("12_2pi7f")
+required_stage = 1
+metadata/_edit_lock_ = true
 
-[node name="textbox" type="MarginContainer" parent="BALL"]
-offset_left = -82.0
-offset_top = -111.0
-offset_right = 95.0
-offset_bottom = -47.0
+[node name="textbox" type="MarginContainer" parent="tutorials"]
+offset_left = -440.0
+offset_top = -148.0
+offset_right = -263.0
+offset_bottom = -84.0
+metadata/_edit_group_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="BALL/textbox"]
+[node name="NinePatchRect" type="NinePatchRect" parent="tutorials/textbox"]
 layout_mode = 2
 texture = ExtResource("12_5mi0e")
 region_rect = Rect2(0, 0, 48, 48)
@@ -528,14 +536,14 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="BALL/textbox"]
+[node name="MarginContainer" type="MarginContainer" parent="tutorials/textbox"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BALL/textbox/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="tutorials/textbox/MarginContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("13_0chrq")
@@ -543,6 +551,9 @@ bbcode_enabled = true
 text = "hold [img=center,center,30]res://objects/used_assets/mouse_left.png[/img] to drag"
 fit_content = true
 vertical_alignment = 1
+
+[node name="BALL" parent="." instance=ExtResource("1_6mpcb")]
+position = Vector2(-356, -32)
 
 [node name="Camera2D" type="Camera2D" parent="BALL"]
 position = Vector2(0, -124)
