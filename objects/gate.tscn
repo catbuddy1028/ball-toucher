@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dux40ys5lwes8"]
+[gd_scene load_steps=9 format=3 uid="uid://dux40ys5lwes8"]
 
 [ext_resource type="Script" uid="uid://dvh3d23bpk1xg" path="res://gate_logic.gd" id="1_6qcw8"]
 [ext_resource type="Texture2D" uid="uid://c4r0ssdna7bhw" path="res://objects/used_assets/red_gate.png" id="2_ikl61"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cpjb70q1igtap" path="res://objects/used_assets/blue_gate.png" id="3_6qcw8"]
 [ext_resource type="Texture2D" uid="uid://di0qg4bdjvqck" path="res://objects/used_assets/green_gate.png" id="4_6ekym"]
 [ext_resource type="Texture2D" uid="uid://6fbscwi0qov5" path="res://objects/used_assets/magenta_gate.png" id="5_s3oi5"]
-[ext_resource type="Texture2D" uid="uid://cnyyb05wdbffq" path="res://objects/used_assets/teal_gate.png" id="6_i1jse"]
-[ext_resource type="Texture2D" uid="uid://3hrkky8yniec" path="res://objects/used_assets/yellow_gate.png" id="7_7butm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qcw8"]
 animations = [{
@@ -19,13 +17,7 @@ animations = [{
 "texture": ExtResource("2_ikl61")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_7butm")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_6ekym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_i1jse")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_6qcw8")
