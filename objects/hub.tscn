@@ -420,14 +420,14 @@ position = Vector2(171, -74)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("8_2pi7f")
 script = ExtResource("5_0chrq")
-required_stage = 5
+required_stage = 2
 
 [node name="indicator6" type="Sprite2D" parent="world/map features"]
 position = Vector2(-11, -133)
 scale = Vector2(0.588235, 0.588235)
 texture = ExtResource("9_0ayo3")
 script = ExtResource("5_0chrq")
-required_stage = 6
+required_stage = 4
 
 [node name="lvl1 teleporter" type="Area2D" parent="world/map features"]
 script = ExtResource("3_4cgt6")
