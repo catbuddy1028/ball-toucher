@@ -23,7 +23,7 @@ Global="*res://objects/global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1028
-window/size/mode=3
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://bh0hpxolsd5x"
 
 [editor_plugins]

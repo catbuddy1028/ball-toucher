@@ -27,3 +27,6 @@ func clear_quiz():
 	quiz3_result = 0
 	lvl_clear = false
 	
+func _input(event):
+	if event is InputEventKey and event.pressed and event.keycode == KEY_F11:
+		JavaScriptBridge.eval("document.getElementById('canvas').requestFullscreen();")
