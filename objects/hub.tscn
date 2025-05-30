@@ -465,7 +465,7 @@ shape = SubResource("RectangleShape2D_jeswm")
 [node name="end teleporter" type="Area2D" parent="world/map features"]
 position = Vector2(-6, 3)
 script = ExtResource("3_4cgt6")
-next_scene_path = "res://objects/lvl_5.tscn"
+next_scene_path = "res://objects/lvl_cipher.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world/map features/end teleporter"]
 position = Vector2(-6.25, -529)
@@ -514,10 +514,10 @@ position = Vector2(-356, -32)
 [node name="Camera2D" type="Camera2D" parent="BALL"]
 position = Vector2(0, -124)
 zoom = Vector2(1.46, 1.46)
-limit_left = -1293
-limit_top = -570
-limit_right = 1185
-limit_bottom = 435
+limit_left = -1378
+limit_top = -665
+limit_right = 765
+limit_bottom = 320
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
