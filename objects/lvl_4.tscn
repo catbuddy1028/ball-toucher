@@ -1,10 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://bntobv066wr3d"]
+[gd_scene load_steps=10 format=3 uid="uid://bntobv066wr3d"]
 
 [ext_resource type="PackedScene" uid="uid://s8dqggjbpged" path="res://objects/lvl_2.tscn" id="1_8oufi"]
+[ext_resource type="Texture2D" uid="uid://defbu6v5lbi3b" path="res://objects/used_assets/scribblePlatformer_vector.svg" id="2_25mfc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rf75"]
+atlas = ExtResource("2_25mfc")
+region = Rect2(88, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ec04"]
+atlas = ExtResource("2_25mfc")
+region = Rect2(158, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrpfp"]
+atlas = ExtResource("2_25mfc")
+region = Rect2(228, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v333"]
+atlas = ExtResource("2_25mfc")
+region = Rect2(298, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi2hb"]
+atlas = ExtResource("2_25mfc")
+region = Rect2(368, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfqyg"]
+atlas = ExtResource("2_25mfc")
+region = Rect2(438, 462, 29, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dkro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rf75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ec04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrpfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v333")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi2hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfqyg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="Lvl1" type="Node2D"]
 
 [node name="Lvl2" parent="." instance=ExtResource("1_8oufi")]
+
+[node name="num1" type="AnimatedSprite2D" parent="Lvl2/world" index="3"]
+position = Vector2(-1, -97)
+sprite_frames = SubResource("SpriteFrames_1dkro")
+frame = 3
+frame_progress = 0.260607
+
+[node name="num2" parent="Lvl2/world" index="4"]
+visible = false
 
 [node name="RichTextLabel" parent="Lvl2/world/textbox/MarginContainer" index="0"]
 text = "Rastrový obrázek s vyšším DPI bude na monitoru vypadat lépe než s nižším DPI."

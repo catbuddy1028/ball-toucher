@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxirh8rpirip3"]
+[gd_scene load_steps=19 format=3 uid="uid://cxirh8rpirip3"]
 
 [ext_resource type="PackedScene" uid="uid://ht8qv7g0a1cq" path="res://objects/lvl_1.tscn" id="1_dmucb"]
+[ext_resource type="Texture2D" uid="uid://defbu6v5lbi3b" path="res://objects/used_assets/scribblePlatformer_vector.svg" id="2_0h1ee"]
 [ext_resource type="PackedScene" uid="uid://f6xs35vnr4yi" path="res://objects/textbox.tscn" id="2_12da2"]
 [ext_resource type="Texture2D" uid="uid://71vkqjjggsev" path="res://objects/used_assets/download.png" id="2_r32v4"]
 [ext_resource type="Texture2D" uid="uid://wwf24atk6c0h" path="res://objects/used_assets/download.jpeg" id="3_0h1ee"]
@@ -11,9 +12,65 @@
 [ext_resource type="FontFile" uid="uid://dpkv78cvnvyb0" path="res://objects/used_assets/Asap-BoldItalic.otf" id="5_pfe7g"]
 [ext_resource type="FontFile" uid="uid://20w3jlofwr3l" path="res://objects/used_assets/Asap-Bold.otf" id="6_r32v4"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rf75"]
+atlas = ExtResource("2_0h1ee")
+region = Rect2(88, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ec04"]
+atlas = ExtResource("2_0h1ee")
+region = Rect2(158, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrpfp"]
+atlas = ExtResource("2_0h1ee")
+region = Rect2(228, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v333"]
+atlas = ExtResource("2_0h1ee")
+region = Rect2(298, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi2hb"]
+atlas = ExtResource("2_0h1ee")
+region = Rect2(368, 462, 29, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfqyg"]
+atlas = ExtResource("2_0h1ee")
+region = Rect2(438, 462, 29, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_du6ak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rf75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ec04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrpfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v333")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi2hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfqyg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
 [node name="Lvl1" type="Node2D"]
 
 [node name="Lvl1" parent="." instance=ExtResource("1_dmucb")]
+
+[node name="num2" type="AnimatedSprite2D" parent="Lvl1/world" index="1"]
+position = Vector2(-6, -109)
+sprite_frames = SubResource("SpriteFrames_du6ak")
+frame = 2
+frame_progress = 0.384333
 
 [node name="CollisionShape2D" parent="Lvl1/world/map features/quiz1" index="0"]
 position = Vector2(1367, 6)
@@ -101,6 +158,9 @@ texture = ExtResource("4_du6ak")
 position = Vector2(3048.82, 147.75)
 scale = Vector2(0.380472, 0.394144)
 texture = ExtResource("5_i77hn")
+
+[node name="num1" parent="Lvl1/world" index="4"]
+visible = false
 
 [node name="textbox2" parent="Lvl1" instance=ExtResource("2_12da2")]
 offset_left = 1693.0
