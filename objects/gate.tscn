@@ -33,12 +33,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ekym"]
 size = Vector2(209, 228)
 
+[sub_resource type="Animation" id="Animation_abm61"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_7tkxs"]
 resource_name = "fade_to_translucent"
 length = 0.5
-
-[sub_resource type="Animation" id="Animation_abm61"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_se0mj"]
 _data = {
