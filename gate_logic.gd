@@ -3,11 +3,12 @@ extends StaticBody2D  # or Area2D if you want detection only
 @export_range(0, 6)
 var required_stage: int = 0  # set this per gate in the editor
 
+
 func _ready():
 	if Global.game_stage > required_stage:
-		$AnimatedSprite.frame = 0
+		$Sprite2D/AnimatedSprite.frame = 0
 	else: 
-		$AnimatedSprite.frame = required_stage
+		$Sprite2D/AnimatedSprite.frame = required_stage
 	check_unlock()
 
 func check_unlock():
@@ -21,7 +22,6 @@ func unlock_gate():
 	self.visible = false
 	self.set_collision_layer(0)
 	self.set_collision_mask(0)
-
 func lock_gate():
 	self.visible = true
 	# set collision layers/masks back to what they were originally

@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqlpy8emyre81"]
+[gd_scene load_steps=14 format=3 uid="uid://cqlpy8emyre81"]
 
 [ext_resource type="Script" uid="uid://b7p5jmsbpsnih" path="res://marble.gd" id="1_c065s"]
 [ext_resource type="Texture2D" uid="uid://dt5otlbi75s5" path="res://assets/we will see if i will use them/Base pack/Vector/aliens.svg" id="2_7jdef"]
-[ext_resource type="AudioStream" uid="uid://d2ykh4gbvl6p0" path="res://objects/used_assets/boing_1.ogg" id="3_pjcny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgol0"]
 friction = 0.1
@@ -95,9 +94,3 @@ scale = Vector2(0.869506, 0.869506)
 sprite_frames = SubResource("SpriteFrames_01kih")
 frame = 1
 frame_progress = 0.566164
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_pjcny")
-volume_db = 8.914
-
-[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

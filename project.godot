@@ -18,6 +18,7 @@ config/icon="res://assets/we will see if i will use them/icon.svg"
 [autoload]
 
 Global="*res://objects/global.gd"
+TransitionScreen="*res://transition_screen.tscn"
 
 [display]
 

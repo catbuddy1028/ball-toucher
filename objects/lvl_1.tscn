@@ -585,13 +585,6 @@ script = ExtResource("10_iry3s")
 position = Vector2(3406, 227)
 shape = SubResource("RectangleShape2D_pco0a")
 
-[node name="hub teleporter" type="Area2D" parent="hub teleporter"]
-script = ExtResource("10_iry3s")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hub teleporter/hub teleporter"]
-position = Vector2(3406, 227)
-shape = SubResource("RectangleShape2D_pco0a")
-
 [connection signal="body_entered" from="world/map features/quiz1" to="world/map features/quiz1" method="_on_body_entered"]
 [connection signal="body_exited" from="world/map features/quiz1" to="." method="_on_correct_answer_area_body_exited"]
 [connection signal="body_exited" from="world/map features/quiz1" to="world/map features/quiz1" method="_on_body_exited"]
@@ -602,7 +595,6 @@ shape = SubResource("RectangleShape2D_pco0a")
 [connection signal="body_exited" from="world/map features/quiz3" to="." method="_on_correct_answer_area_body_exited"]
 [connection signal="body_exited" from="world/map features/quiz3" to="world/map features/quiz3" method="_on_body_exited"]
 [connection signal="body_entered" from="hub teleporter" to="hub teleporter" method="_on_body_entered"]
-[connection signal="body_entered" from="hub teleporter/hub teleporter" to="hub teleporter/hub teleporter" method="_on_body_entered"]
 
 [editable path="world/map features/quiz1/textbox"]
 [editable path="world/map features/quiz1/textbox3"]

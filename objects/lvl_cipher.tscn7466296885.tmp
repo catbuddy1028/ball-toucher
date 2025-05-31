@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://ddpi8b5onk1ic"]
+[gd_scene load_steps=10 format=4 uid="uid://ddpi8b5onk1ic"]
 
 [ext_resource type="Texture2D" uid="uid://biefyq2abc4b8" path="res://objects/used_assets/scribbleDungeons_tiles.svg" id="1_25ml2"]
 [ext_resource type="Texture2D" uid="uid://defbu6v5lbi3b" path="res://objects/used_assets/scribblePlatformer_vector.svg" id="2_pulmw"]
+[ext_resource type="FontFile" uid="uid://20w3jlofwr3l" path="res://objects/used_assets/Asap-Bold.otf" id="3_dkm84"]
 [ext_resource type="PackedScene" uid="uid://c2we6nixv2mqy" path="res://objects/ball.tscn" id="4_hwocl"]
 [ext_resource type="Script" uid="uid://dv1rwf4p2qodx" path="res://objects/control.gd" id="4_pulmw"]
 [ext_resource type="FontFile" uid="uid://bydsnonn53jjk" path="res://objects/used_assets/Asap-Medium.otf" id="5_dkm84"]
@@ -272,6 +273,18 @@ position = Vector2(19, -43)
 tile_map_data = PackedByteArray("AAD0/wEAAQAGAAEAAAD1/wEAAQAGAAEAAAD2/wEAAQAGAAEAAAD3/wEAAQAGAAEAAAD4/wEAAQAGAAEAAAD5/wEAAQAGAAEAAAD6/wEAAQAGAAEAAAD0//z/AQAGAAEAAAD0//3/AQAGAAEAAAD0//7/AQAGAAEAAAD0////AQAGAAEAAAD0/wAAAQAGAAEAAAD7/wEAAQAGAAEAAAD8/wEAAQAGAAEAAAD9/wEAAQAGAAEAAAD+//z/AQAGAAEAAAD+//3/AQAGAAEAAAD+//7/AQAGAAEAAAD+////AQAGAAEAAAD+/wAAAQAGAAEAAAD+/wEAAQAGAAEAAAD0//v/AQAGAAEAAAD1//v/AQAGAAEAAAD2//v/AQAGAAEAAAD3//v/AQAGAAEAAAD4//v/AQAGAAEAAAD5//v/AQAGAAEAAAD6//v/AQAGAAEAAAD7//v/AQAGAAEAAAD8//v/AQAGAAEAAAD9//v/AQAGAAEAAAD+//v/AQAGAAEAAAA=")
 tile_set = SubResource("TileSet_86mq3")
 use_kinematic_bodies = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="walls"]
+offset_left = -284.0
+offset_top = -63.0
+offset_right = -150.0
+offset_bottom = 6.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_dkm84")
+bbcode_enabled = true
+text = "pokud A je D"
+fit_content = true
+vertical_alignment = 1
 
 [node name="BALL" parent="." instance=ExtResource("4_hwocl")]
 position = Vector2(-356, -32)

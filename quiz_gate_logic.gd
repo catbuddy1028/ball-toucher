@@ -1,24 +1,25 @@
-extends StaticBody2D  # or Area2D if you want detection only
+extends StaticBody2D
 
-var check_timer = 0.0
+var gate_unlocked = false
 
 func _process(delta):
 	check_unlock()
-
+	
 func check_unlock():
-	if Global.lvl_clear == true:
+	if Global.lvl_clear and not gate_unlocked:
 		unlock_gate()
-	else:
+	elif not Global.lvl_clear and gate_unlocked:
 		lock_gate()
 
-func unlock_gate():
-	# Example: disable collision and hide the gate so player can pass
-	self.visible = false
-	self.set_collision_layer(0)
-	self.set_collision_mask(0)
 
+func unlock_gate():
+	if not gate_unlocked:
+		gate_unlocked = true
+		self.set_collision_layer(0)
+		self.set_collision_mask(0)
+		self.visible = false
 func lock_gate():
+	gate_unlocked = false
 	self.visible = true
-	# set collision layers/masks back to what they were originally
 	self.set_collision_layer(1)
 	self.set_collision_mask(1)

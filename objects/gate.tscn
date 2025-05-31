@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dux40ys5lwes8"]
+[gd_scene load_steps=12 format=3 uid="uid://dux40ys5lwes8"]
 
 [ext_resource type="Script" uid="uid://dvh3d23bpk1xg" path="res://gate_logic.gd" id="1_6qcw8"]
 [ext_resource type="Texture2D" uid="uid://c4r0ssdna7bhw" path="res://objects/used_assets/red_gate.png" id="2_ikl61"]
@@ -33,10 +33,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ekym"]
 size = Vector2(209, 228)
 
+[sub_resource type="Animation" id="Animation_7tkxs"]
+resource_name = "fade_to_translucent"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_abm61"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_se0mj"]
+_data = {
+&"RESET": SubResource("Animation_abm61"),
+&"fade_to_translucent": SubResource("Animation_7tkxs")
+}
+
 [node name="gate" type="StaticBody2D"]
 script = ExtResource("1_6qcw8")
 
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Sprite2D"]
 position = Vector2(-43.8958, 7)
 scale = Vector2(0.708333, 0.708333)
 sprite_frames = SubResource("SpriteFrames_6qcw8")
@@ -44,3 +59,8 @@ sprite_frames = SubResource("SpriteFrames_6qcw8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-41.5, 108)
 shape = SubResource("RectangleShape2D_6ekym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_se0mj")
+}

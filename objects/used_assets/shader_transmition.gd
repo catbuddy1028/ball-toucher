@@ -7,7 +7,7 @@ const float _min = -1.0;
 const float _max = 1.0;
 uniform float pixel_size = 0.08;
 
-uniform float height = -1.0;
+uniform float height = -1.0;s
 uniform bool disable_pixel;
 
 void fragment() {

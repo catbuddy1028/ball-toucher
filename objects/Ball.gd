@@ -32,9 +32,6 @@ func _input(event):
 
 func _physics_process(delta):
 	if dragging:
-		if audio_player.playing:
-			audio_player.stop()
-
 		var target_pos = get_global_mouse_position() + drag_offset
 		var force = (target_pos - global_position) * DRAG_STRENGTH - linear_velocity * DAMPING
 		apply_central_force(force)
@@ -42,17 +39,3 @@ func _physics_process(delta):
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if dragging:
 		return  # don't process collisions while dragging
-
-	var now := Time.get_ticks_msec()
-
-	for i in state.get_contact_count():
-		var impact_speed := state.get_contact_local_velocity_at_position(i).length()
-		if impact_speed > min_impact_velocity and (now - last_collision_time > IMPACT_COOLDOWN_MS):
-			last_collision_time = now
-
-			var t: float = clamp((impact_speed - min_impact_velocity) / (max_impact_velocity - min_impact_velocity), 0.0, 1.0)
-			audio_player.volume_db = lerp(base_volume_db, max_volume_db, t)
-			audio_player.pitch_scale = 1.0 + randf_range(-pitch_variation, pitch_variation)
-
-			audio_player.play()
-			break
